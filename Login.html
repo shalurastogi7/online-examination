@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-image: url("{% static 'a.jpeg' %}");
+        background-size: cover;
+      }
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <br><br><br><br><br><br><br><br>
+    <div class="container" style="height: 300px; width: 400px; text-align: center; color:lightseagreen; background: rgba(0, 0, 0, .6); border-radius: 0px 10px 0px 10px;">
+        <h3 style="text-align: center; padding-top: 20px;">Student Login Form</h3>
+        <br><br>
+      <form method="POST" autocomplete="off" enctype="multipart/form-data" action="login">
+          {% csrf_token %}
+      
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="username">Username    <input type="text" placeholder="Username" name="uname"></label>
+                 </div>
+              <div class="form-group col-md-12">
+                <label for="inputPassword4">Password <input type="text" placeholder="Password" name="password"></label>
+                </div>
+              </div>
+
+      
+          <button type="submit" class="btn btn-success" style="border-radius:5px; width: 100px;">Login</a></button>
+        </form>
+    </div>
+</body>
+</html>
